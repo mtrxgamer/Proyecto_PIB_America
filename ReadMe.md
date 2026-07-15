@@ -35,4 +35,4 @@ Enlace al dashboard:
 | Nombre              | GitHub                       |
 | ------------------- | ---------------------------- |
 | Matias Barra        | https://github.com/mtrxgamer |
-| Diego Nuñez         | https://github.com dieguitonunez10-art |
+| Diego Nuñez         | https://github.com/dieguitonunez10-art |
