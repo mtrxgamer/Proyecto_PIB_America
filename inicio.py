@@ -32,6 +32,9 @@ pais = st.sidebar.selectbox(
     "Seleccione un país",
     df_america["Country Name"].unique()
 )
+# ponemos nuestros nombres y apellidos en el sidebar
+st.sidebar.write("Matias Barra")
+st.sidebar.write("Diego Nuñez")
 
 # Selección de rango de años
 years = df_america.columns[3:]
@@ -56,6 +59,11 @@ indice_fin = list(years).index(fin)
 x = years[indice_inicio:indice_fin + 1]
 y = y[indice_inicio:indice_fin + 1]
 
+# Promedio de todos los países para el rango seleccionado
+datos_globales = df_america[x]
+
+pib_global = datos_globales.mean(axis=0)
+
 # Crear gráfico de línea
 fig, ax = plt.subplots(figsize=(12,6))
 
@@ -75,6 +83,17 @@ ax.grid(True)
 plt.xticks(rotation=45)
 
 st.pyplot(fig)
+
+ax.plot(
+    x,
+    pib_global,
+    linestyle="--",
+    linewidth=2,
+    label="Promedio América"
+)
+
+# Legenda para el promedio de América
+ax.legend()
 
 # Mostrar métricas de PIB del país, PIB global y diferencia
 col1, col2, col3 = st.columns(3)
